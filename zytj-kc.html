@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./08.jpg">
+    <title>心理课程推荐</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 2000px;
+            overflow-x: hidden;
+            background-color:rgb(242, 209, 219) ;
+        }
+
+        .shell {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        header {
+            width: 100%;
+            height: 700px;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+            transition: clip-path 0.5s ease;
+            position: relative;
+        }
+
+        .img {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            background: url(./kc1.png);
+            background-size: cover;
+            transform: scale(1);
+            transition: transform 0.5s ease;
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 100px;
+        }
+
+        .main h2 {
+            font-size: 50px;
+            margin-bottom: 40px;
+        }
+
+        .main span {
+            padding: 0 100px;
+            font-size: 30px;
+        }
+
+
+
+        @import url('https://fonts.googleapis.com/css?family=Lato:700,900');
+
+        @font-face {
+            font-family: Arno Pro;
+            src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ArnoPro-Regular.otf);
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: Arno Pro;
+            src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ArnoPro-Italic.otf);
+            font-style: italic;
+        }
+
+        p {
+            font-family: Arno Pro, serif;
+            font-size: 1.4rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        p.credits {
+            font-style: italic;
+            text-indent: 0 !important;
+            margin: 1rem 0;
+        }
+
+        p a {
+            font-weight: bolder;
+            color: #000;
+            text-decoration: none;
+        }
+
+        @supports (font-variant-caps: small-caps) {
+            .multicol:first-of-type p:first-of-type {
+                font-variant-caps: small-caps;
+            }
+        }
+
+        p:not(:first-of-type) {
+            text-indent: 1.4rem;
+        }
+
+        .multicol {
+            column-count: 4;
+            column-gap: 2rem;
+        }
+
+        .multicol+img {
+            margin: 2rem 0;
+        }
+
+        article {
+            width: 80%;
+            margin: 0 auto 4rem;
+        }
+
+        article img {
+            width: 100%;
+        }
+
+        article header {
+            margin-bottom: 2.5rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+        }
+
+        article h1 {
+            margin-top: 0;
+            font-size: 3rem;
+        }
+
+        article h2 {
+            break-after: column;
+            font-size: 1.5rem;
+        }
+
+        h1,
+        h2 {
+            font-family: Lato, sans-serif;
+        }
+
+        @media all and (max-width: 1600px) {
+            .multicol {
+                column-count: 3;
+            }
+        }
+
+        @media all and (max-width: 1000px) {
+            .multicol {
+                column-count: 2;
+            }
+        }
+
+        @media all and (max-width:800px) {
+            article h2 {
+                break-after: avoid;
+            }
+
+            .multicol {
+                column-count: 1;
+            }
+        }
+
+        @media all and (max-width:600px) {
+            body {
+                margin: 0;
+            }
+
+            article {
+                width: 100%;
+            }
+
+            .multicol {
+                padding: 0 1rem;
+            }
+
+            article header {
+                margin-bottom: 2.5rem;
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+
+            h1 {
+                margin-bottom: 0;
+            }
+        }
+        b{
+            font-style: initial;
+            color: #5aace3;
+        }
+        #backButton {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        text-decoration: none;
+        color: rgb(70, 100, 180);
+        font-size: 20px;
+    } 
+    </style>
+</head>
+
+<body>
+    <a href="#" id="backButton">返回</a>
+    <div class="shell">
+        <header>
+            <div class="img"></div>
+        </header>
+        <div class="main">
+            <main>
+                <article>
+                    <div class="multicol">
+                        <h1>心理健康课程推荐</h1>
+                        <h2> take care of the soul</h2>
+                        <p>
+                            <b>1. 高校开设的公开课：</b><br>
+                            <strong>（1）清华大学《大学生心理健康丨调控情绪塑造阳光心态》：</strong>由李焰教授主讲，李焰教授是中国心理学会认证督导师、教育部高校心理健康教育专家指导委员会委员等，经验丰富。该课程能帮助学生培养理性平和、乐观开朗、健康向上的阳光心态，提高适应能力和情绪调节能力，对于大学生常见的心理问题及应对方法有深入的讲解和分析。<br>
+                            <strong>（2）北京航空航天大学《阳光心理》：</strong>分为第一部分和第二部分，以积极心理健康理念为引领，目标是培养服务国家战略和引领时代发展的未来领军领导人才。课程引导学生掌握并应用心理健康知识技能，提升大学适应、人际沟通、时间管理、情绪管理、危机应对等能力，对于即将步入大学或正在大学阶段的学生具有很强的实用性。<br>
+                        <strong>（3）西南交通大学《心理育人系列课程》：</strong>由宁维卫教授主讲，宁维卫教授是西南交通大学应用心理学研究院院长等，在心理学领域有较高的造诣。该课程强调大学生不仅需要学科专业的硬实力，更需要健康心理的软实力，对于大学生的心理成长和发展有重要的指导意义。<br>
+                    </div>
+                    <img src="./kc2.png" alt="">
+                    <div class="multicol">
+                        <p><b>2. 专业培训机构的课程：</b><br>
+                        </strong>（1）瀚思心理：</strong>提供了多种心理学课程，如心理咨询师临床技能与实践、精神分析连续培训与督导、心理学在职研修课程等。该机构整合了清华大学、北京大学、中科院心理所、香港城市大学等著名心理学院系的师资，以及心理专家和专业服务资源，课程质量较高。如果你想深入学习心理学知识，或者未来有从事心理咨询相关工作的打算，可以选择该机构的课程。<br>
+                    <strong>（2）EAP 培训：</strong>专业为组织和个人提供线上线下的各种培训、咨询服务，包括组织 EAP 的导入、各类培训、专业人员培训等。其课程形式活泼多样，采用身心互动、体验式培训，把知识讲授、角色扮演、游戏感悟、案例分析、问题研讨等培训要素融为一体，能够帮助学生更好地理解和应用心理健康识。<br>
+                            此外，一些在线学习平台如中国大学 MOOC、网易公开课等也有许多优质的心理健康课程可供选择。中国大学 MOOC 上有来自不同高校的心理学专业课程，网易公开课上则有国内外高校的公开课程资源，都可以帮助学生系统地学习心理健康知识和技能。</p>
+                    </div><img src="./kc3.png" alt="">
+                    <div class="multicol">
+                        <p><b>3.一些额外的在线心理健康课程推荐：</b><br>
+                        <strong>（1）壹心理学院：</strong>该平台提供了丰富多样的心理健康课程，涵盖了各个年龄段和不同主题。比如针对成年人的压力管理课程，详细讲解了压力的来源、对身心的影响以及如何有效地应对压力，通过案例分析和实用技巧的传授，帮助学员掌握压力管理的方法；还有针对人际关系的课程，探讨如何改善亲子关系、亲密关系、职场关系等，帮助学员提升人际交往能力。
+                            课程的优势在于其专业性和系统性，讲师团队由专业的心理咨询师、心理学家组成，他们具有丰富的实践经验和专业知识，能够为学员提供高质量的教学内容。<br>
+                        <strong>（2）简单心理：</strong>推出了一系列的心理咨询师培训课程和大众心理健康课程。其中，心理咨询师培训课程适合想要深入学习心理咨询专业知识、未来从事相关工作的人群，课程内容包括心理咨询的理论基础、技术方法、伦理规范等；大众心理健康课程则面向普通大众，如情绪管理课程，帮助学员认识各种情绪，学习情绪调节的策略和方法，提高情绪的稳定性和适应性。
+                            平台的特色是注重实践和案例分析，通过实际案例的讲解和讨论，让学员更好地理解和应用所学知识，并且提供课后的答疑和辅导服务，帮助学员解决学习过程中遇到的问题。<br>
+                        <strong>（3）KnowYourself：</strong>课程内容主要聚焦于自我认知、情绪情感、人际关系等方面。例如自我认知课程，引导学员探索自己的性格特点、价值观、兴趣爱好等，帮助学员更好地了解自己，找到自己的优势和不足，从而实现自我成长和发展；在情感课程方面，有关于恋爱心理、婚姻家庭等主题的课程，帮助学员理解情感关系中的各种问题，掌握处理情感问题的方法和技巧。
+                            其课程形式新颖多样，除了传统的线上课程外，还推出了音频课程、短视频课程等，方便学员根据自己的学习习惯和时间安排进行学习。<br>
+                        <strong>（4）Coursera：</strong>与世界各地的知名高校和机构合作，提供了大量的心理健康相关课程。例如，密歇根大学的“心理学导论”课程，系统地介绍了心理学的基本概念、理论和研究方法，其中包括心理健康的相关内容，如心理障碍的类型、成因和治疗方法等；还有宾夕法尼亚大学的“积极心理学”课程，关注人类的积极情绪、优势和美德，探讨如何培养积极的心态和幸福感。
+                            课程的优势在于其权威性和国际化，学员可以接触到全球顶尖的教学资源，学习到最前沿的心理健康知识和理论，并且可以获得相应的课程证书，提升自己的学习价值和竞争力。<br>
+                        <strong>（5）EdX：</strong>同样是一个知名的在线学习平台，提供了来自哈佛大学、麻省理工学院等世界名校的心理健康课程。比如哈佛大学的“心理健康与幸福”课程，从多个角度探讨了心理健康和幸福的关系，包括心理健康的影响因素、如何促进心理健康和幸福等，课程内容丰富，教学质量高。
+                            该平台的课程具有很强的学术性和专业性，适合对心理健康领域有深入学习需求的学员，通过学习这些课程，学员可以拓宽自己的学术视野，提高自己的专业素养。<br></p>
+                    </div>
+                </article>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const header = document.querySelector('header');
+        const img = document.querySelector('.img');
+        let scrollDistance = 0;
+        let requestId = null;
+        function updateHeaderClipPath() {
+            const clipPathValue = `polygon(0 0, 100% 0%, 100% ${(scrollDistance <= 600) ? 100 - ((scrollDistance / 600) * 60) : 75}%, 0 100%)`;
+            header.style.clipPath = clipPathValue;
+            const scaleValue = 1 + ((scrollDistance / 600) * 1);
+            img.style.transform = `scale(${scaleValue})`;
+            const opacityValue = (scrollDistance / 600);
+        }
+        function scrollHandler(event) {
+            if (event.deltaY < 0) {
+                scrollDistance = Math.max(0, scrollDistance + event.deltaY);
+            } else {
+                scrollDistance = Math.min(600, scrollDistance + event.deltaY);
+            }
+            if (!requestId) {
+                requestId = window.requestAnimationFrame(() => {
+                    updateHeaderClipPath();
+                    requestId = null;
+                });
+            }
+        }
+        window.addEventListener('wheel', scrollHandler);
+        const backButton = document.getElementById('backButton');
+   backButton.addEventListener('click', function() {
+       history.back();
+   });
+    </script>
+</body>
+</html>

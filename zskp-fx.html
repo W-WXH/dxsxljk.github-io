@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./08.jpg">
+    <title>案例分析</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 5100px;
+            overflow-x: hidden; 
+            background-color:rgb(242, 209, 219) ;
+
+        }
+
+        .shell {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        header {
+            width: 100%;
+            height: 700px;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+            transition: clip-path 0.5s ease;
+            position: relative;
+        }
+
+        .img {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            background: url(./14.jpg);
+            background-size: cover;
+            transform: scale(1);
+            transition: transform 0.5s ease;
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 100px;
+        }
+
+        .main span {
+            padding: 0 100px;
+            font-size: 30px;
+        }
+        b{
+            font-style: initial;
+            color: #5aace3;
+        }
+
+
+        @import url('https://fonts.googleapis.com/css?family=Lato:700,900');
+
+        @font-face {
+            font-family: Arno Pro;
+            src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ArnoPro-Regular.otf);
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: Arno Pro;
+            src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ArnoPro-Italic.otf);
+            font-style: italic;
+        }
+
+        p {
+            font-family: Arno Pro, serif;
+            font-size: 1.4rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        p.credits {
+            font-style: italic;
+            text-indent: 0 !important;
+            margin: 1rem 0;
+        }
+
+        p a {
+            font-weight: bolder;
+            color: #000;
+            text-decoration: none;
+        }
+
+        @supports (font-variant-caps: small-caps) {
+            .multicol:first-of-type p:first-of-type {
+                font-variant-caps: small-caps;
+            }
+        }
+
+        p:not(:first-of-type) {
+            text-indent: 1.4rem;
+        }
+
+        .multicol {
+            column-count: 4;
+            column-gap: 2rem;
+        }
+
+        .multicol+img {
+            margin: 2rem 0;
+        }
+
+        article {
+            width: 80%;
+            margin: 0 auto 4rem;
+        }
+
+        article img {
+            width: 40%;
+        }
+
+        article header {
+            margin-bottom: 2.5rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+        }
+
+
+        @media all and (max-width: 1600px) {
+            .multicol {
+                column-count: 3;
+            }
+        }
+
+        @media all and (max-width: 1000px) {
+            .multicol {
+                column-count: 2;
+            }
+        }
+
+        @media all and (max-width:800px) {
+            article h2 {
+                break-after: avoid;
+            }
+
+            .multicol {
+                column-count: 1;
+            }
+        }
+
+        @media all and (max-width:600px) {
+            body {
+                margin: 0;
+            }
+
+            article {
+                width: 100%;
+            }
+
+            .multicol {
+                padding: 0 1rem;
+            }
+
+            article header {
+                margin-bottom: 2.5rem;
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+
+        }
+    #backButton {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        text-decoration: none;
+        color: rgb(70, 100, 180);
+        font-size: 20px;
+    } 
+    h3 {
+    font-size: 2em; 
+    line-height: 1; 
+    text-align: justify; 
+    font-family: Arial, sans-serif; 
+}
+
+    </style>
+</head>
+
+<body>
+    <a href="#" id="backButton">返回</a>
+    <div class="shell">
+        <header>
+            <div class="img"></div>
+        </header>
+        <div class="main">
+            <main>
+                <article>
+                    <div class="multicol">
+                        <h3>《大学生自我认知类案例分析》</h3>
+                        <p><b>一、案例介绍：</b><br>
+                            艺术五队的小A在参加实习岗位招聘面试落选后，独自离开招聘公司，在QQ空间发表说说：“为什么你们都这么优秀，好像最弱的、被抛弃的那个永远是我。”
+                            班级心理委员第一时间将说说转发给辅导员，为防止学生出现生命安全问题，学校迅速组织人员应对处理。辅导员安排班长在校园里寻找；辅导员一边调看校园监控，一边不间断地拨打她的手机，但是手机一直处于关机状态，大家心中都很着急。<br>
+                            40多分钟以后，小A才主动联系了辅导员。她说之前不想和人说话，独自在校园僻静的角落伤心流泪，有轻生的想法。回寝室打开手机，看到未接电话记录和关心的短信，于是才打电话。直到这一刻，辅导员悬着的心才放下来。<br>
+                            <b>二、案例分析：</b><br>
+                        <strong>（一）积极倾听，疏导负面情绪</strong><br>
+                            辅导员赶到小A的寝室，第一时间陪在小A身边。在寝室阳台上，落日的余晖洒了下来，她还是忍不住伤心的情绪，边哭边说自己不好，对不起家人和朋友。辅导员通过积极倾听，从她的角度出发看待问题，设身处地考虑她的感受，不急于下结论，鼓励她充分表达自己的思想和情感。她说和室友一起应聘，只有自己落选。那一刻，自己感到绝望，一下子触发了她最敏感的话题——面部的疤痕，自卑感油然而生。那一刻，辅导员明白了小A的想法，她是多么想通过自身努力获得岗位从而证明自己的价值啊。这一次落选在别人眼里也许是小事一桩，可是在她心里确是重重的一击。辅导员把自己感受到的情绪反馈给了她，她觉得自己被理解了，情绪平缓了很多。通过这一次深入的沟通，辅导员听到了小A的心声，小A也感受到导员的真诚。我们的关系得到了进一步的强化。辅导员告诉她，以后当自己有了负面情绪时，记得找一个知心朋友去倾诉，朋友的耐心倾听和理解对于恢复正常情绪都是一剂良药。<br>
+                            自卑是自我情绪体验的一种形式，是个体在自我认识过程中对自己能力或品质评价低，轻视或看不起自己，担心失去他人尊重的一种心理状态。为了防止自卑情绪的泛化，接下来，辅导员趁热打铁，及时采取措施，引导小A正视自卑背后的不合理信念。<br>
+                        <strong>（二）运用合理情绪疗法，调整认知偏差</strong><br>
+                            首先，辅导员向她解释合理情绪疗法中的ABC情绪理论，然后深入挖掘其不合理信念并加以引导修正。
+                            小A落选之后的自动思维是“所有人都欺骗了自己”，具体来讲，她对自己的面容有自卑心理。父母从小鼓励她努力生活，善待他人，幸运的人一定会有好命。一路走来，小A用认真和微笑收获了他人的认可，见证了父亲的鼓励是可信的。这些经历导致其发展出“只要努力，生活就一定会按照自己的意愿给予回报”的核心信念。<br>
+                            在这次实习招聘中，前台客服岗位对面容有一定的要求，小A选择不适合自己的岗位，导致失败。之前的核心信念在落选中被激活并具体表述为“我努力了但是不成功，所以亲人和好友说的那些鼓励我的话都是骗我的”，但其本质都指向了“我的面容不完美，我就不够好，我也不会成功”，应对策略是“忽略自身的能力和性格优点，应聘的落选归因于命运不公，对自己低评价，不再相信他人”。<br>
+                            辅导员提醒她注意因果推论的绝对化。这一次落选既有客观因素，也有主观因素。客观因素是公司招聘过程中存在一定的歧视，忽视了学生自身的能力优势和积极的态度；主观因素是因为小A只选择了前台客服一个岗位。通过横向比较，室友成功应聘不仅因为相貌周正，而且他们做了大量的求职准备，面试中发挥得也不错；而小A自身也很优秀，并且拥有很好的社会支持，从小到大，家人和朋友不仅没有嫌弃她的外貌，而且始终在关爱着她，这些都是她成长成才最坚强的后盾。<br>
+                            谈话到最后，小A承认是一时冲动才发了那条说说。现在情绪平静了许多，她将说说删掉了。她希望自己快点调整过来，以面对接下来的面试。 <br>
+                        <strong>（三）总结技能优势，激发自我效能</strong><br>
+                            辅导员运用生涯工具——“小A的成就故事”，总结小A过去的成功经历，挖掘其能力优势。小A在大学期间担任学生会宣传部副部长和班级生活委员，人际关系良好，认真完成各项工作；平时积极参加学科竞赛，担任组长并获得好成绩；有一次院部举行大型活动需要做好宣传，时间紧，任务重，白天课程多，她带着干事连续四天每晚加班到11点，后来干事们坚持不了，她硬是一个人用画笔按时按质地完成了任务，被评为当年优秀团干。总结起来，小A不怕困难，积极主动完成工作，待人诚恳大方，善解人意，有较强的团队合作精神，具备良好的职业素养。<br>
+                            综上，小A主要具备服务型职业能力，即以人际关系的协调能力为主，通过沟通使顾客获得心理满足的能力，适合住宅区物业管理的工作。<br>
+                            在接下来的面试中，当被问到胜任力，小A的回答有理有据，得到了面试官的认可。小A成功应聘了长城物业一线大城市分公司的项目管家岗位。在见习阶段，和同事相处融洽，得到了经理的认可，心情愉快。<br>
+                            6月初，小A在QQ给辅导员留言：多亏有您的照顾，不然我都不知道有没有勇气继续生活，继续学习。<br>
+                            <b>三、思考与建议：</b><br>
+                        <strong>（一）抓实民生工程，做好大学生就业帮扶</strong><br>
+                            辅导员面对实习求职受挫的学生，要用自己的耐心和爱心，帮助他们走出心理困境，引导他们做好就业择业工作。<br>
+                        <strong>（二）借助积极倾听，真诚关注学生</strong><br>
+                            本案例中，学生因为应聘失败引发伤心、绝望的情绪，辅导员应该通过积极倾听，放下评判，为其提供理解和接受的氛围，使其承认自己否定或拒绝的那一部分自我进而变得自然、信任自己，为下一步调整认知打下良好基础。<br>
+                        <strong>（三）使用理性情绪疗法，调整认知偏差</strong><br>
+                            本案例中，学生因为面部有瑕疵，内心深处摆脱不了自卑，在遇到挫折时难免出现负面情绪甚至是极端想法。辅导员使用ABC情绪理论，教会学生将“想要应聘成功”的合理要求区别于“努力就一定成功”的非理性信念。调整学生认知，理性应对失败，消除学生的自我挫败观点。说明这是一种比较高效和切实可行的方法。<br>
+
+
+                    </p>
+                    </div>
+                    <img src="./zs1.png" alt="">
+                    <div class="multicol">
+                        <h3>《大学生社交焦虑案例分析》</h3>
+                        <p><b>一、案例介绍</b><br>
+                            小李，男，20 岁，大学二年级学生。性格内向，不善言辞。最近一段时间，小李感到自己在人际交往中越来越紧张和不安，尤其是在与陌生人交往或在公众场合发言时，会出现心跳加速、脸红、出汗等生理反应，甚至会出现口吃和思维混乱的情况。为了避免这种尴尬的情况发生，小李开始尽量避免与他人交往，尤其是陌生人。这种回避行为不仅影响了小李的学习和生活，也让他感到非常苦恼和无助。<br>
+                            <b>二、问题表现</b><br>
+                        <strong>1. 生理反应：</strong>在人际交往中出现心跳加速、脸红、出汗等生理反应。<br>
+                    <strong>2. 心理反应：</strong>感到紧张、不安、恐惧，担心自己会出丑或被别人嘲笑。<br>
+                <strong>3. 行为表现：</strong>回避与他人交往，尤其是陌生人；在公众场合发言时会出现口吃和思维混乱的情况。<br>
+                            <b>三、成因分析</b><br>
+                        <strong>（一）</strong>家庭教养方式不当<br>
+                            小李的父母对他要求非常严格，从小就对他的学习和生活进行了严格的控制和管理。这种教养方式让小李感到非常压抑和束缚，缺乏自信和自主能力。父母对小李的社交活动也进行了严格的限制，很少让他参加社交活动或与同龄人交往。这种缺乏社交经验的成长环境，让小李在面对人际交往时感到非常紧张和不安。<br>
+                        <strong>（二）</strong>自我认知偏差<br>
+                            小李对自己的评价非常低，认为自己是一个不善言辞、不讨人喜欢的人。这种自我认知偏差让他在人际交往中缺乏自信，容易产生紧张和不安的情绪。小李对他人的评价也非常敏感，总是担心自己会被别人嘲笑或批评。这种过度关注他人评价的心理，让他在人际交往中更加紧张和不安。<br>
+                        <strong>（三）</strong>缺乏社交技能<br>
+                            小李从小就缺乏社交经验，不知道如何与他人交往和沟通。在面对人际交往时，他往往不知道该说什么、该做什么，容易出现尴尬和冷场的情况。小李也缺乏一些基本的社交技能，如倾听、表达、赞美等。这些技能的缺乏，让他在人际交往中更加困难和不自信。<br>
+                            <b>四、应对策略</b><br>
+                        <strong>（一） 心理辅导</strong><br>
+                            为小李提供专业的心理辅导，帮助他了解自己的情绪和行为，认识到社交焦虑的成因和影响。引导小李进行自我探索和自我认知，帮助他发现自己的优点和长处，提高自信心和自我价值感。教授小李一些放松技巧，如深呼吸、冥想、肌肉松弛等，帮助他在人际交往中缓解紧张和不安的情绪。<br>
+                        <strong>（二） 认知行为疗法</strong><br>
+                            帮助小李识别和纠正自己的负面思维和认知偏差，如“我是一个不善言辞的人”、“别人会嘲笑我”等。引导小李进行积极的自我暗示和自我对话，如“我可以做到”、“我很有价值”等。鼓励小李逐渐面对自己的恐惧和不安，通过实际行动来改变自己的行为模式。<br>
+                        <strong>（三）社交技能训练</strong><br>
+                            为小李提供一些社交技能训练，如倾听技巧、表达技巧、赞美技巧等。组织小李参加一些社交活动和小组讨论，让他在实际情境中练习和运用这些社交技能。给予小李及时的反馈和鼓励，帮助他不断提高自己的社交能力。<br>
+                        <strong>（四）家庭支持</strong><br>
+                            与小李的父母进行沟通，让他们了解小李的问题和需求，改变对小李的教养方式。鼓励父母多给予小李一些支持和鼓励，让他感受到家庭的温暖和关爱。建议父母适当放手，让小李有更多的机会去尝试和探索，培养他的自主能力和自信心。<br>
+                            <b>五、效果评估</b><br>
+                            经过一段时间的综合干预，小李的社交焦虑症状得到了明显缓解。他在人际交往中不再那么紧张和不安，能够更加自然地与他人交往和沟通。他也开始积极参加一些社交活动，扩大了自己的社交圈子。在学习和生活中，小李也变得更加自信和开朗，成绩也有了明显的提高。<br>
+                            <b>六、结论</b><br>
+                            大学生社交焦虑是一个比较常见的问题，对大学生的学习和生活产生了很大的影响。通过对小李的案例分析，我们可以看出，大学生社交焦虑的成因是多方面的，包括家庭教养方式、自我认知偏差和缺乏社交技能等。针对这些问题，我们可以采取心理辅导、认知行为疗法、社交技能训练和家庭支持等综合干预措施，帮助大学生缓解社交焦虑症状，提高人际交往能力。同时，我们也应该加强对大学生心理健康的关注和教育，提高大学生的心理素质和应对能力，为他们的成长和发展提供更好的支持和保障。<br>
+                            
+                    </p>
+                    </div>
+                    <img src="./zs1.png" alt="">
+                    <div class="multicol">
+                        <h3>《大学生恋爱心理案例分析》</h3>
+                        <p><b>一、案例介绍</b><br>
+                            本案例涉及两位大学生，小张和小李，两人同在一个大学读书，并在一次社团活动中相识。经过一段时间的接触和交往，两人彼此产生了好感，逐渐坠入爱河。然而，在恋爱过程中，两人遇到了一些心理问题，如沟通不畅、性格不合等，导致感情出现了裂痕。<br>
+                            <b>二、案例分析</b><br>
+                        <strong>1. 沟通不畅</strong><br>
+                            小张和小李在恋爱初期，对彼此的沟通并不顺畅。
+                            有时，两人会因为一些小事情而争吵，彼此都不肯让步。分析原因，一方面是因为年轻气盛，缺乏沟通技巧；另一方面，双方过于以自我为中心，忽略了对方的感受。<br>
+                        <strong>2. 性格不合</strong><br>
+                            在深入交往后，双方逐渐发现彼此的性格存在较大差异。小张喜欢热闹，喜欢参加各种活动，而小李则更喜欢安静，喜欢独自思考。这种性格差异导致双方在兴趣爱好和生活方式上出现分歧，进而影响到感情。<br>
+                        <strong>3. 现实因素</strong><br>
+                            除了沟通不畅和性格不合外，现实因素也对两人的感情产生了一定的影响。例如，双方的家庭背景、价值观等方面存在较大差异。这些因素在一定程度上加剧了双方的心理压力，使彼此感到焦虑和不安。<br>
+                            <b>三、解决方案</b><br>
+                        <strong>4.调整沟通方式</strong><br>
+                            为了解决沟通不畅的问题，小张和小李需要学会倾听对方的意见和感受，尊重对方的观点。同时，双方可以约定一些沟通规则，例如在争吵时尽量冷静下来，就事论事，不翻旧账等。<br>
+                        <strong>5. 改善性格缺点</strong><br>
+                            双方可以尝试通过心理咨询、性格培养等方式来改善自己的性格缺点。例如，小张可以学习如何更好地控制自己的情绪，小李则可以尝试更加积极地参与社交活动。同时，双方可以互相鼓励和支持对方发展自己的兴趣爱好和生活方式。<br>
+                        <strong>6. 合理协调恋爱与学业</strong><br>
+                            大学生在恋爱过程中应该合理协调好恋爱与学业的关系。要明确自己的学业是首要任务，不能因为恋爱而耽误学业。同时，双方可以共同制定一份恋爱与学业的计划表，明确每天的时间安排和任务分工，确保双方都能在不影响学业的情况下享受恋爱带来的快乐。<br>
+                        <strong>7. 加强家庭背景和价值观的沟通与理解</strong><br>
+                            双方家庭背景和价值观的差异是导致两人心理压力的重要因素之一。因此，双方需要加强这方面的沟通与理解。可以尝试通过家庭背景和价值观的分享、交流来增进双方的了解和信任。同时，也可以寻求家庭和朋友的帮助和支持，共同解决彼此在恋爱中遇到的问题。<br>
+                            <b>四、总结与反思</b><br>
+                            大学生恋爱心理是大学生活中一个重要的话题，也是一个难点。在恋爱过程中遇到的各种心理问题和现实因素需要双方共同努力去解决。通过本案例的分析与解决方案的提出，我们可以看到大学生在恋爱过程中需要学会沟通、理解、尊重和信任对方才能维护好自己的感情。同时也要明确自己的学业是首要任务不能因为恋爱而耽误学业。在遇到问题时双方可以共同制定一份恋爱与学业的计划表明确每天的时间安排和任务分工确保双方都能在不影响学业的情况下享受恋爱带来的快乐。<br>
+                            
+                    </p>
+                    </div>
+                    
+                </article>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const header = document.querySelector('header');
+        const img = document.querySelector('.img');
+        let scrollDistance = 0;
+        let requestId = null;
+        function updateHeaderClipPath() {
+            const clipPathValue = `polygon(0 0, 100% 0%, 100% ${(scrollDistance <= 600) ? 100 - ((scrollDistance / 600) * 60) : 75}%, 0 100%)`;
+            header.style.clipPath = clipPathValue;
+            const scaleValue = 1 + ((scrollDistance / 600) * 1);
+            img.style.transform = `scale(${scaleValue})`;
+            const opacityValue = (scrollDistance / 600);
+        }
+        function scrollHandler(event) {
+            if (event.deltaY < 0) {
+                scrollDistance = Math.max(0, scrollDistance + event.deltaY);
+            } else {
+                scrollDistance = Math.min(600, scrollDistance + event.deltaY);
+            }
+            if (!requestId) {
+                requestId = window.requestAnimationFrame(() => {
+                    updateHeaderClipPath();
+                    requestId = null;
+                });
+            }
+        }
+        window.addEventListener('wheel', scrollHandler);
+        const backButton = document.getElementById('backButton');
+   backButton.addEventListener('click', function() {
+       history.back();
+   });
+    </script>
+</body>
+
+</html> 

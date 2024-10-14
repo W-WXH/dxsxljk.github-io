@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./08.jpg">
+    <title>科普性文章</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 6000px;
+            overflow-x: hidden; 
+            background-color:rgb(242, 209, 219) ;
+
+        }
+
+        .shell {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        header {
+            width: 100%;
+            height: 700px;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+            transition: clip-path 0.5s ease;
+            position: relative;
+        }
+
+        .img {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            background: url(./13.jpg);
+            background-size: cover;
+            transform: scale(1);
+            transition: transform 0.5s ease;
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 100px;
+        }
+
+        .main span {
+            padding: 0 100px;
+            font-size: 30px;
+        }
+        b{
+            font-style: initial;
+            color: #5aace3;
+        }
+
+
+        @import url('https://fonts.googleapis.com/css?family=Lato:700,900');
+
+        @font-face {
+            font-family: Arno Pro;
+            src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ArnoPro-Regular.otf);
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: Arno Pro;
+            src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ArnoPro-Italic.otf);
+            font-style: italic;
+        }
+
+        p {
+            font-family: Arno Pro, serif;
+            font-size: 1.4rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        p.credits {
+            font-style: italic;
+            text-indent: 0 !important;
+            margin: 1rem 0;
+        }
+
+        p a {
+            font-weight: bolder;
+            color: #000;
+            text-decoration: none;
+        }
+
+        @supports (font-variant-caps: small-caps) {
+            .multicol:first-of-type p:first-of-type {
+                font-variant-caps: small-caps;
+            }
+        }
+
+        p:not(:first-of-type) {
+            text-indent: 1.4rem;
+        }
+
+        .multicol {
+            column-count: 4;
+            column-gap: 2rem;
+        }
+
+        .multicol+img {
+            margin: 2rem 0;
+        }
+
+        article {
+            width: 80%;
+            margin: 0 auto 4rem;
+        }
+
+        article img {
+            width: 40%;
+        }
+
+        article header {
+            margin-bottom: 2.5rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+        }
+
+
+        @media all and (max-width: 1600px) {
+            .multicol {
+                column-count: 3;
+            }
+        }
+
+        @media all and (max-width: 1000px) {
+            .multicol {
+                column-count: 2;
+            }
+        }
+
+        @media all and (max-width:800px) {
+            article h2 {
+                break-after: avoid;
+            }
+
+            .multicol {
+                column-count: 1;
+            }
+        }
+
+        @media all and (max-width:600px) {
+            body {
+                margin: 0;
+            }
+
+            article {
+                width: 100%;
+            }
+
+            .multicol {
+                padding: 0 1rem;
+            }
+
+            article header {
+                margin-bottom: 2.5rem;
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+
+        }
+    #backButton {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        text-decoration: none;
+        color: rgb(70, 100, 180);
+        font-size: 20px;
+    } 
+    h3 {
+    font-size: 2em; 
+    line-height: 1; 
+    text-align: justify; 
+    font-family: Arial, sans-serif; 
+}
+
+    </style>
+</head>
+
+<body>
+    <a href="#" id="backButton">返回</a>
+    <div class="shell">
+        <header>
+            <div class="img"></div>
+        </header>
+        <div class="main">
+            <main>
+                <article>
+                    <div class="multicol">
+                        <h3>《大学生心理健康——守护“你”心》</h3>
+                        <p>不知从何时开始，我们的生活节奏变得越来越快。很多人还来不及消化今天的压力，就要被迫面对明天。飞速发展的社会推着每个人向前奔跑，但脚步却日渐沉重。而这不仅引起身体的疾病，也会造成心理的问题，而心理问题常常容易被忽视，因而难以及时发现和治疗。今天就让我们一起了解一些心理健康小知识吧。<br>
+                        <b>自我要求</b><br>
+                        1、不对自己过分苛求。为了避免挫折感，应当把目标定在自己能力的所及之内。
+                        2、助人为乐。帮助别人可以使自己忘却烦恼，更可以获得珍贵的友谊。
+                        3、集中精力处理近事。这样可以减轻精神负担，以免弄得心力俱废。
+                        4、不要处处与人竞争。以和为贵，不四面树敌，以免经常处于紧张状态。
+                        5、熟悉到挫折具有双重性，挫折会给人以打击，带来损失和痛苦，但也能使人奋起、成熟，从中得到锻炼。<br>
+                    </p>
+                    </div>
+                    <img src="./zs1.png" alt="">
+                    <div class="multicol">
+                        <p> <b>舒缓压力</b><br>
+                        新时代青年在日益激烈的社会竞争下，不可避免地被卷入、被评价、被比较，随之出现了来自同伴的压力、考试的压力、父母期待的压力给生活蒙上一层灰色。担忧、自卑、浮躁、松懈等焦虑感莫名而来，导致上课心不在焉、记忆力下降、烦躁不堪、无端发火、精神萎靡不振等表现。焦虑情绪已经严重干扰了学习和生活，也影响了幸福感。保持平静愉悦的心态其实是一种能力，需要修炼。掌控感能从根本上减轻焦虑，重拾自信。心理导师通过心理上的放松、焦虑的控制、改变不合理信条等方式，锻炼正向思维的乐观大脑，用投入来战胜浮躁，用心促进高效学习，用激情获得成就。通过专业的心理疏导和认知方式的调整，不仅能让学生重获自信，从容面对各种压力，拥有了受益一生的快乐心态和耐挫能力，在坦途上欣然进取，逆境中挑战挫折，用快乐心态激发潜能，全面提升心理应对能力，体验自我实现的快乐。<br> </p>
+                    </div>
+                    <img src="./zs2.jpg" alt="">
+                    <div class="multicol">
+                        <p><b>人生态度</b><br>
+                       正确的人生态度来源于正确的认识、正确的世界观。抱有正确人生态度的人，对周围的事物有较为清醒的认识和判断，既有远大的理想，又有实事求是的精神，因而在社会变革时期能够跟上时代的步伐、头脑清楚、眼界开阔、立场坚定、既不保守也不冒进……总之，正确的人生态度使他们分析问题、处理问题时比较客观、稳妥，与时代共同进步，心态始终保持健康水平。<br> </p>
+                    </div>
+                    <img src="./zs3.jpg" alt="">
+                    <div class="multicol">
+    
+                    <h3>《呵护健康，守护心灵》</h3>
+                        <p>“健康不仅仅指强健的体魄，而且包括心理健康、社会适应良好和道德健康”。随着社会的发展和生活的压力增加，我们更应该关注自己的心理健康，掌握基本的心理健康常识，正确认识心理健康问题。希望同学们关注自己的心理健康，通过运动、音乐、日记等释放压力，学会调整心态，学会沟通与交流，提升团队凝聚力，促进个人和团队的成长。<br>
+                        <b>何为心理健康？</b><br>
+                        由原国家卫生计生委、中宣部等22个部门联合印发的《关于加强心理健康服务的指导意见》（国卫疾控发〔2016〕77号）将心理健康定义为“人现成长和发展过程中，认知合理、情绪稳定、行为适当、人际和谐、适应变化的一种完好状态。对大学生而言，心理健康更是建立良好人际关系、提升创造力、保证良好发展的基础。<br>
+                        <b>大学生心理健康的标准</b><br>
+                        ①智力正常；②情绪健康；③意志健全；④人格完整；⑤自我评价适当；⑥人际关系和谐；⑦适应能力强；⑧心理行为符合大学生的年龄特征；<br>
+                        1.感到焦虑和紧张；2.感到无法应对；3.感到要做的事情太多；4.感到来自他人的压力容易发火或爱发牢骚；5.因为责任而感到过度忧虑；6.感觉孤独或寂寞；7.感觉疲倦；8.对未来感到担忧；9.很难放松或睡眠出现问题；10.头痛；11.很难集中注意力；12.认为一件事情非常糟糕，找不到头绪。<br>
+                        <b>大学生心理问题的自助</b><br>
+                    <strong>1.调整生活方式</strong><br>
+                    <em>（1）科学的饮食:</em><br>
+                        热量分配合理，饮食适量原则，多吃健康食物。<br>
+                    <em>（2）合理的睡眠:</em><br>
+                        拥有健康睡眠的方法；
+                        定期运动；注意睡前饮食；建立良好睡眠环境；睡前热水泡脚
+                        注意睡姿；运用心理暗示；保持情绪平和；放松训练。<br>
+                    <em>（3）适宜的运动:</em><br>
+                        参与体育运动无疑是一个很好的减压方法。激烈的奔跑，或者水中的畅游，或者挥拍激战时，肌肉虽是紧张的，神经却是放松的，大汗淋漓过后，你会得到彻底的放松。<br>
+                    <strong>2.阅读书籍</strong><br>
+                        古人曰：“腹有诗书气自华。”当你遇到烦恼、忧愁和不快的事时，应该首先学会自我解脱，去读一读或翻一翻喜欢的书籍和杂志，分散心思，改变心态，冷静情绪，减少精神痛苦。<br>
+                    <strong>3.合理宣泄</strong><br>
+                    <em>（1）写一写:</em>
+                        每天写下或画下三件当天发生的、能让你平静或快乐的事，哪怕是非常小的事情都可以。可以把它们贴在便利贴上，贴在床头、电脑等醒目位置，感到沮丧时就看看它们。<br>
+                    <em>（2）说一说:</em>
+                        有一句话叫“一个好汉三个帮。”人在失意或受到挫折时，最需要朋友的关照和帮助。此时，你可以走出家门，找自己的知心朋友谈谈心，一吐心中的不快，在善意的劝导、热心的安慰下，精神的痛苦将得以消除。<br>   
+                        保持心理健康是我们每个人都应该关注的，让我们从现在起，关注自己的内心世界，努力保持内心的平和与幸福。     <br>                        
+                    </p>
+                    </div>
+                    <img src="./zs5.jpg" alt="">
+                    <div class="multicol">
+                        <h3>《大学生如何应对压力，保持心理健康》</h3>
+                        <p>在大学校园里，压力如影随形。学业的挑战、社交的困惑、未来的不确定性，都像是一座座小山，压在大学生的心头。然而，正确地认识和应对这些压力，是保持心理健康的关键。<br>
+                        <b>学业上</b>，课程的难度不断升级，考试、论文、实验等任务接踵而至。面对这些，大学生首先要学会制定合理的学习计划。将大目标分解成小目标，一步一个脚印地去完成，既能减轻压力，又能增加成就感。同时，不要过分追求完美，要允许自己有失误和不足，毕竟学习是一个不断进步的过程。当遇到学习上的困难时，要积极主动地向老师、同学请教，不要让问题越积越多。<br>
+                        <b>社交方面</b>，离开熟悉的家人和朋友，进入一个新的社交圈子，难免会感到不适应。这时，要勇敢地迈出第一步，主动与他人交流。参加社团活动、班级聚会等，都是拓展社交圈的好机会。在与他人交往的过程中，要学会尊重和理解对方，避免冲突和矛盾。如果遇到人际关系上的困扰，不要独自承受，可以找朋友倾诉，或者寻求心理咨询师的帮助。<br>
+                        对于未来的不确定性，大学生往往会感到焦虑和迷茫。这是正常的，但不能让这种情绪一直困扰自己。要积极地去了解自己的兴趣和优势，结合专业知识，制定职业规划。可以通过参加实习、社会实践等活动，增加自己的社会经验，为未来的就业做好准备。同时，要保持乐观的心态，相信自己能够应对未来的挑战。<br>
+                        总之，大学生要学会正确地应对压力，通过合理的学习、积极的社交和明确的职业规划，保持心理健康，让自己的大学生活更加充实和精彩。<br>
+                    </p>
+                    </div>
+                    <img src="./zs4.jpg" alt="">
+                    <div class="multicol">
+                        <h3>《情绪管理——大学生的必修课》</h3>
+                        <p>情绪是我们内心的晴雨表，它时刻影响着我们的生活和学习。对于大学生来说，学会管理情绪是一门必修课。<br>
+                        大学生正处于身心发展的关键时期，情绪波动较大。有时候，因为一件小事就可能引发强烈的情绪反应，比如愤怒、焦虑、悲伤等。这些情绪如果得不到及时的管理和控制，不仅会影响自己的身心健康，还会影响与他人的关系。<br>
+                        <b>首先</b>，要学会认识自己的情绪。在情绪产生时，要停下来，问问自己“我现在的感受是什么？”“为什么会有这种感受？”通过这样的自我反思，能够更好地理解自己的情绪，从而采取相应的措施。例如，当你因为考试成绩不理想而感到沮丧时，要认识到这是因为自己对成绩的期望过高，或者是学习方法不当导致的。<br>
+                        <b>其次</b>，要学会表达情绪。情绪的表达不是随意地发泄，而是要选择合适的方式和场合。可以找一个安静的地方，大哭一场，或者找朋友倾诉，把内心的痛苦和烦恼说出来。也可以通过写日记、画画、听音乐等方式，来表达自己的情绪。但是，要避免在情绪激动的时候做出冲动的行为，比如与他人争吵、砸东西等。<br>
+                        <b>最后</b>，要学会调节情绪。当情绪不好时，可以尝试一些放松的方法，比如深呼吸、冥想、瑜伽等。这些方法能够帮助我们缓解紧张的情绪，让身心得到放松。同时，要保持良好的生活习惯，合理饮食、充足睡眠、适量运动，这些都有助于我们保持良好的情绪状态。<br>
+                        总之，情绪管理是大学生心理健康的重要组成部分。只有学会管理自己的情绪，才能更好地应对生活中的各种挑战，保持身心健康<br>
+                    </p>
+                    </div>
+                    <img src="./zs6.jpg" alt="">
+                    <div class="multicol">
+                        <h3>《建立良好人际关系，为大学生心理健康助力》</h3>
+                        <p>在大学生活中，人际关系是不可或缺的一部分。良好的人际关系不仅能够让我们的大学生活更加丰富多彩，还能够为我们的心理健康提供有力的支持。<br>
+                            <b>与室友的关系是大学生人际关系中最为重要的一种。</b>室友是我们每天都要相处的人，相处时间长，接触机会多。因此，要学会与室友相互理解、相互包容。尊重室友的生活习惯和个人隐私，不要随意干涉他人的生活。当与室友发生矛盾时，要及时沟通，坦诚地表达自己的想法和感受，寻求解决问题的方法。同时，要学会关心和帮助室友，在室友遇到困难时，伸出援手，这样能够增进彼此之间的感情。<br>
+                            <b>在班级中，要积极参与班级活动，与同学们建立良好的关系。</b>可以与同学们一起讨论学习问题、参加课外活动，共同度过美好的大学时光。在与同学交往的过程中，要保持真诚、友善的态度，不要虚伪、做作。同时，要学会欣赏和赞美他人，发现他人的优点和长处，这样能够让他人感受到你的尊重和认可，从而建立起良好的人际关系。<br>
+                            除了室友和同学，<b>大学生还可以通过参加社团活动、志愿者服务等方式，结识更多的朋友。</b>在这些活动中，能够遇到志同道合的人，一起追求共同的目标和理想。通过与这些人的交往，能够拓展自己的视野，丰富自己的人生经验，同时也能够为自己的心理健康带来积极的影响。<br>
+                            总之，建立良好的人际关系是大学生心理健康的重要保障。大学生要学会与他人相处，尊重他人、理解他人、关心他人，从而建立起和谐、融洽的人际关系。<br>                            
+                    </p>
+                    </div>
+                    <img src="./zs7.jpg" alt="">
+                </article>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const header = document.querySelector('header');
+        const img = document.querySelector('.img');
+        let scrollDistance = 0;
+        let requestId = null;
+        function updateHeaderClipPath() {
+            const clipPathValue = `polygon(0 0, 100% 0%, 100% ${(scrollDistance <= 600) ? 100 - ((scrollDistance / 600) * 60) : 75}%, 0 100%)`;
+            header.style.clipPath = clipPathValue;
+            const scaleValue = 1 + ((scrollDistance / 600) * 1);
+            img.style.transform = `scale(${scaleValue})`;
+            const opacityValue = (scrollDistance / 600);
+        }
+        function scrollHandler(event) {
+            if (event.deltaY < 0) {
+                scrollDistance = Math.max(0, scrollDistance + event.deltaY);
+            } else {
+                scrollDistance = Math.min(600, scrollDistance + event.deltaY);
+            }
+            if (!requestId) {
+                requestId = window.requestAnimationFrame(() => {
+                    updateHeaderClipPath();
+                    requestId = null;
+                });
+            }
+        }
+        window.addEventListener('wheel', scrollHandler);
+        const backButton = document.getElementById('backButton');
+   backButton.addEventListener('click', function() {
+       history.back();
+   });
+    </script>
+</body>
+
+</html> 

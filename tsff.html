@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./08.jpg">
+  <title>调适方法</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+    }
+
+    #main {
+      
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #click-section {
+      width: 35%;
+      height: 100%;
+      padding: 20px 0;
+      position: relative;
+    }
+
+    #drawerboxes {
+      margin-left: 10%;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    #drawerboxes::before {
+      content: "";
+      width: 8px;
+      height: 94%;
+      position: absolute;
+      left: -10px;
+      top: 3%;
+      z-index: 120;
+    }
+
+    .drawerbox {
+      height: calc(100% / 5.5);
+      width: 70%;
+      position: relative;
+      z-index: 100;
+      transform: translateX(-70%);
+      transition: transform .5s ease-in-out;
+    }
+
+    .drawerbox.active {
+      transform: translateX(0);
+    }
+
+    .drawer-btn {
+      width: 100%;
+      height: 100%;
+      font: 800 30px '';
+      background-color: rgb(175, 190, 255);
+      border: none;
+      transition: background-color .5s ease-in-out;
+      color: #ffffff00;
+    }
+
+    .drawer-btn.active {
+      background-image: url(./bg.jpg);
+      background-size: cover;
+      color: rgb(70, 100, 180);
+    }
+
+    .drawer-btn:hover {
+      cursor: pointer;
+    }
+
+    .drawer-head {
+      position: absolute;
+      color: rgb(255, 255, 255);
+      font-size: 200px;
+      font-weight: 700;
+      right: -38px;
+      top: calc(50% - 135px);
+      text-shadow: 2px -1px 8px rgba(250, 80, 193, 0.323);
+    }
+
+    #slide-section {
+      position: relative;
+      height: 100%;
+      width: 65%;
+      display: flex;
+      justify-content: center;
+      padding: 0 40px;
+      background: linear-gradient(to right bottom,
+          rgba(255, 255, 255, .6),
+          rgba(255, 255, 255, .3),
+          rgba(255, 255, 255, .2));
+      backdrop-filter: blur(11px);
+    }
+
+    #slide-bar {
+      position: absolute;
+      top: 10%;
+      left: 40px;
+      height: 80%;
+      width: 1px;
+      background-color: rgb(223, 223, 223);
+    }
+
+    #bar {
+      position: absolute;
+      height: calc(100% / 3);
+      width: 5px;
+      top: 0;
+      left: -1.2px;
+      background-color: rgb(175, 190, 255);
+      transition: transform .5s ease-in-out;
+    }
+
+    #card-section {
+      height: 100%;
+      width: 80%;
+      overflow: hidden;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      padding: 10% 0;
+      color: white;
+      font-size: 30px;
+      transition: transform .5s ease-in-out;
+    }
+
+    .card-small-title {
+      font-size: 30px;
+      font-weight: 600;
+      padding-bottom: min(5%, 10px);
+      color: rgb(70, 100, 180);
+    }
+
+    .card-title {
+      font-size: 80px;
+      font-weight: 700;
+      padding-bottom: min(20%, 40px);
+      color: rgb(70, 100, 180);
+    }
+
+    .card-content {
+      font-size: 24px;
+      font-weight: 400;
+      color: rgb(94, 123, 255);
+      margin-bottom: 60px;
+    }
+
+    .card-img {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .card-img img {
+      width: 100%;
+    }
+    #myBackLinkId {
+      top: 10px;
+      left: 10px;
+      text-decoration: none;
+      color: rgb(70, 100, 180);
+      font-size: 20px;
+      position: fixed; /* 使用fixed定位，确保它相对于视口定位 */
+      z-index: 1000; 
+}
+  </style>
+</head>
+
+<body>
+  <a href="javascript:history.back()" id="myBackLinkId">返回</a>
+  <div id="main">
+    <div id="click-section">
+      <div id="drawerboxes">
+        <div class="drawerbox active">
+          <button class="drawer-btn active" onclick="slideTo(1)">抑郁调适<span
+              class="drawer-head">1</span></button>
+        </div>
+        <div class="drawerbox">
+          <button class="drawer-btn" onclick="slideTo(2)">压力调适<span
+              class="drawer-head">2</span></button>
+        </div>
+        <div class="drawerbox">
+          <button class="drawer-btn" onclick="slideTo(3)">焦虑调适<span class="drawer-head">3</span></button>
+        </div>
+      </div>
+    </div>
+    <div id="slide-section">
+      <div id="slide-bar">
+        <div id="bar"></div>
+      </div>
+      <div id="card-section">
+        <div id="card1" class="card">
+          <div class="card-small-title">Depressed</div>
+          <div class="card-title">抑郁</div>
+          <div class="card-content">1.心理调适是缓解抑郁的有效手段。<br>
+            认知重构是关键。患者需识别和纠正错误的思维模式，培养积极的心态。情绪管理同样重要，通过情绪调节技巧，如深呼吸、冥想等方法，减轻负面情绪。<br>
+            2.行为调适是改善抑郁状态的另一种途径。<br>
+            建议患者积极参与户外活动，增加阳光和社交互动，有助于提升情绪。规律的作息和健康的饮食也是必要的，它们能为身体提供能量，增强抵抗力。<br>
+            3.社交支持在抑郁康复中扮演着重要角色。亲友的理解和关心，能为患者提供情感慰藉。同时要随时保持自己的身心愉悦。<br>
+            4.对于重度抑郁患者，药物治疗是不可或缺的。抗抑郁药物能调节大脑神经递质平衡，缓解症状。但需注意，药物治疗应在医生指导下进行，以避免副作用。</div>
+          <div class="card-img">
+            <img src="./02.jpg" alt="">
+          </div>
+        </div>
+        <div id="card2" class="card">
+          <div class="card-small-title">Pressured</div>
+          <div class="card-title">压力</div>
+          <div class="card-content">1.我们需要识别压力。压力可能表现为疲劳、失眠、注意力不集中等症状。早点发现压力，有助于我们及时采取措施，避免压力累积成疾。
+            然后分析压力的来源。工作压力、人际关系、健康问题、经济负担等都可能成为压力的源头。明确压力来源，有助于我们更有针对性地进行调适。<br>
+            2.心理调适包括积极心态、自我鼓励、情绪宣泄等。保持积极心态，能够帮助我们更好地面对压力。在遇到挫折时，给自己一些积极的暗示和鼓励，能够增强信心。同时，合理宣泄情绪，如通过写日记、与朋友倾诉等方式，也能有效缓解压力。<br>
+            3.行为调适。合理安排时间，制定清晰的计划。适量运动、保持良好的作息习惯、均衡饮食等都能增强身体抵抗力，减轻压力。<br>
+            4.社交支持。与家人、朋友、同事建立良好的关系，能够在遇到困难时获得支持和帮助。参加社交活动，扩大交际圈，也能有效减轻孤独感和压力。<br>
+        </div>
+          <div class="card-img">
+            <img src="./08.jpg" alt="">
+          </div>
+        </div>
+        <div id="card3" class="card">
+          <div class="card-small-title">Worried</div>
+          <div class="card-title">焦虑</div>
+          <div class="card-content">1.情绪管理是关键。当焦虑情绪出现时，可以通过以下方式管理：一是接受情绪，不抗拒，也不逃避；二是用深呼吸、冥想等技巧帮助情绪平复；三是通过日记记录情绪变化，寻找触发焦虑的根源。<br>
+            2.进行放松训练。焦虑时，身体会处于紧张状态。通过放松训练，如瑜伽、渐进性肌肉松弛法等，可以帮助身体恢复平静，缓解焦虑。这些方法通过放松身体，进而影响心理状态，达到身心平衡。<br>
+            3.寻求社交支持。与家人、朋友或专业人士分享焦虑感受，可以获得情感支持和实际帮助。社交支持可以减少孤独感，增强战胜焦虑的信心。<br>
+            4.如果焦虑影响到了日常生活，建议寻求专业帮助。心理咨询师或精神科医生可以提供专业的评估和治疗，包括药物治疗和心理治疗，帮助患者更好地管理焦虑。</div>
+          <div class="card-img">
+            <img src="./07.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // 定义变量 
+    let chosenSlideNumber = 1; // 当前选择的幻灯片编号 
+    let offset = 0; // 幻灯片偏移量 
+    let barOffset = 0; // 导航条偏移量 
+    let intervalID; // 定时器 ID 
+    // 启动幻灯片轮播 
+    startSlide();
+    // 获取所有抽屉按钮，并为每个按钮添加点击事件监听器 
+    const drawerBtns = Array.from(document.querySelectorAll(".drawer-btn"));
+    drawerBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        clearInterval(intervalID); // 清除定时器 
+        startSlide(); // 重新启动幻灯片轮播 
+      })
+    })
+    // 获取幻灯片区域 
+    const slideSection = document.querySelector("#slide-section");
+    // 鼠标移入幻灯片区域时清除定时器 
+    slideSection.addEventListener("mouseenter", () => {
+      clearInterval(intervalID);
+    })
+    // 鼠标移出幻灯片区域时重新启动幻灯片轮播 
+    slideSection.addEventListener("mouseleave", () => {
+      startSlide();
+    })
+    // 切换到指定编号的幻灯片 
+    function slideTo(slideNumber) {
+      drawerboxToggle(slideNumber); // 切换抽屉面板状态 
+      drawerbtnToggle(slideNumber); // 切换抽屉按钮状态 
+      // 更新偏移量 
+      let previousSlideNumber = chosenSlideNumber;
+      chosenSlideNumber = slideNumber;
+      offset += (chosenSlideNumber - previousSlideNumber) * (-100); // 计算幻灯片偏移量 
+      barOffset += (chosenSlideNumber - previousSlideNumber) * (100); // 计算导航条偏移量 
+      barSlide(barOffset); // 移动导航条 
+      // 获取所有幻灯片，为每个幻灯片设置偏移量 
+      const slides = document.querySelectorAll(".card");
+      Array.from(slides).forEach(slide => {
+        slide.style.transform = `translateY(${offset}%)`;
+      })
+    }
+    // 切换抽屉面板状态 
+    function drawerboxToggle(drawerboxNumber) {
+      let prevDrawerboxNumber = chosenSlideNumber;
+      const drawerboxes = document.querySelectorAll(".drawerbox");
+      drawerboxes[prevDrawerboxNumber - 1].classList.toggle("active"); // 切换前一个抽屉面板的状态 
+      drawerboxes[drawerboxNumber - 1].classList.toggle("active"); // 切换当前抽屉面板的状态 
+    }
+    // 切换抽屉按钮状态 
+    function drawerbtnToggle(drawerBtnNumber) {
+      let prevDrawerBtnNumber = chosenSlideNumber;
+      const drawerBtns = document.querySelectorAll(".drawer-btn");
+      drawerBtns[prevDrawerBtnNumber - 1].classList.toggle("active"); // 切换前一个抽屉按钮的状态 
+      drawerBtns[drawerBtnNumber - 1].classList.toggle("active"); // 切换当前抽屉按钮的状态 
+    }
+    // 移动导航条 
+    function barSlide(barOffset) {
+      const bar = document.querySelector("#bar");
+      bar.style.transform = `translateY(${barOffset}%)`;
+    }
+    // 启动幻灯片轮播 
+    function startSlide() {
+      intervalID = setInterval(() => {
+        slideTo(chosenSlideNumber % 4 + 1); // 每次切换到下一个幻灯片 
+      }, 3000);} // 每隔 3 秒自动切换幻灯片 
+
+  
+    
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./08.jpg">
+    <title>专家观点</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 6000px;
+            overflow-x: hidden; 
+            background-color:rgb(242, 209, 219) ;
+
+        }
+
+        .shell {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        header {
+            width: 100%;
+            height: 700px;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+            transition: clip-path 0.5s ease;
+            position: relative;
+        }
+
+        .img {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            background: url(./12.jpg);
+            background-size: cover;
+            transform: scale(1);
+            transition: transform 0.5s ease;
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 100px;
+        }
+
+        .main span {
+            padding: 0 100px;
+            font-size: 30px;
+        }
+        b{
+            font-style: initial;
+            color: #5aace3;
+        }
+
+
+        @import url('https://fonts.googleapis.com/css?family=Lato:700,900');
+
+        @font-face {
+            font-family: Arno Pro;
+            src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ArnoPro-Regular.otf);
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: Arno Pro;
+            src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ArnoPro-Italic.otf);
+            font-style: italic;
+        }
+
+        p {
+            font-family: Arno Pro, serif;
+            font-size: 1.4rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        p.credits {
+            font-style: italic;
+            text-indent: 0 !important;
+            margin: 1rem 0;
+        }
+
+        p a {
+            font-weight: bolder;
+            color: #000;
+            text-decoration: none;
+        }
+
+        @supports (font-variant-caps: small-caps) {
+            .multicol:first-of-type p:first-of-type {
+                font-variant-caps: small-caps;
+            }
+        }
+
+        p:not(:first-of-type) {
+            text-indent: 1.4rem;
+        }
+
+        .multicol {
+            column-count: 4;
+            column-gap: 2rem;
+        }
+
+        .multicol+img {
+            margin: 2rem 0;
+        }
+
+        article {
+            width: 80%;
+            margin: 0 auto 4rem;
+        }
+
+        article img {
+            width: 40%;
+        }
+
+        article header {
+            margin-bottom: 2.5rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+        }
+
+
+        @media all and (max-width: 1600px) {
+            .multicol {
+                column-count: 3;
+            }
+        }
+
+        @media all and (max-width: 1000px) {
+            .multicol {
+                column-count: 2;
+            }
+        }
+
+        @media all and (max-width:800px) {
+            article h2 {
+                break-after: avoid;
+            }
+
+            .multicol {
+                column-count: 1;
+            }
+        }
+
+        @media all and (max-width:600px) {
+            body {
+                margin: 0;
+            }
+
+            article {
+                width: 100%;
+            }
+
+            .multicol {
+                padding: 0 1rem;
+            }
+
+            article header {
+                margin-bottom: 2.5rem;
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+
+        }
+    #backButton {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        text-decoration: none;
+        color: rgb(70, 100, 180);
+        font-size: 20px;
+    } 
+    h3 {
+    font-size: 2em; 
+    line-height: 1; 
+    text-align: justify; 
+    font-family: Arial, sans-serif; 
+    }
+    hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+
+    </style>
+</head>
+
+<body>
+    <a href="#" id="backButton">返回</a>
+    <div class="shell">
+        <header>
+            <div class="img"></div>
+        </header>
+        <div class="main">
+            <main>
+                <article>
+                    <div class="multicol">
+                        <h3>1.乔志宏（北京师范大学心理学部教授）</h3>
+                        <p>他指出，如果大学生觉察到自己情绪上不太对劲，总是处于忧虑、担心、紧张、悲伤、非常不快乐的状态，且这种情绪状态持续两周以上，就应该意识到自己可能在情绪方面出现了问题，需要关注。<br>
+                        另外，在认知方面，如果学生对自己产生非常强烈的负面认识，觉得自己没有能力、很笨、懒惰不想学习，觉得自己各方面都比别人差，这种特别消极的自我认知如果在大学期间变得更加强烈或严重，也需要重视和关注。<br>                            
+                    </p>
+                    </div>
+                    <img src="./z1.jpg" alt="">
+
+                    <div class="multicol">
+                        <h3>2.陆林（中国科学院院士、北京大学第六医院院长）</h3>
+                        <p>新冠肺炎疫情可能引发一些心理问题，大学生要学会自我心理评估，掌握心理调适技能。鼓励大学生在特殊时期一边做好线上学习，一边调节好自我身心，以更好的状态投入到未来的学习、工作、生活中。</p>
+                    </div>
+                    <img src="./z2.jpg" alt="">
+                    
+                    <div class="multicol">
+                        <h3>3.徐凯文（北京大学心理健康教育与咨询中心副主任）</h3>
+                        <p>提出“空心病”的概念，认为这是价值观缺陷导致的部分大学生心理障碍。其症状表现为觉得人生毫无意义，对生活感到十分迷茫，不知道自己想要什么，疲惫、孤独、情绪差，感觉学习和生活没有意义，人生看不到希望，存在感缺失等。“空心病”的核心问题是缺乏支撑其意义感和存在感的价值观，且常规的药物治疗对这种心理障碍无效。
+                    </p>
+                    </div>
+                    <img src="./z3.jpg" alt="">
+
+                    <div class="multicol">
+                        <h3>4.荣红国（北京中医药大学国家中医药发展与战略研究院特聘副研究员）</h3>
+                        <p>通过知识图谱可视化工具分析我国大学生心理健康研究现状，发现“心理问题”与“心理素质”是当前大学生心理健康研究热点。心理健康素质是大学生整体素质的重要组成部分，大学生产生心理问题的原因是多方面的。并且提到心理资本与心理育人是大学生心理健康领域的研究热点和前沿，后续研究可针对高校心理育人困境探索应对路径，促进大学生心理健康素质与思想道德素质、科学文化素质协调发展。
+                    </p>
+                    </div>
+                    <img src="./z5.jpg" alt="">
+
+                    <div class="multicol">
+                        <h3>5.谢斌（上海市精神卫生中心党委书记）</h3>
+                        <p>认为世界是不完美的，每个人在心理健康方面也并非完美，我们需要认识并接纳自身的不完美，才能轻松面对生活。当今充满不确定性，个体应将外部的不确定性转化为内部的确定性，同时当发现周围人快崩溃时要及时伸出援手。生命是无常的，每个人都要珍惜生命，履行自身健康第一责任人的责任，在病痛和脆弱时懂得积极寻求专业帮助。
+                    </p>
+                    </div>
+                    <img src="./z4.jpg" alt="">
+
+                   
+                    <div class="multicol">
+                        <h3>6.蔡丹（上海师范大学教育学院党委副书记、上海师范大学儿童发展与家庭研究中心执行主任）</h3>
+                        <p>从2013 年开始进行大学生心理健康发展的跟踪研究。最新调查数据显示，大学生的主观幸福感在 7 分左右，压力在 5 分上下，跟十年前相比压力感受有所上升。并且现在大学生的心理呈现出一些新特征，比如社交方式逐渐线上化，“社恐”增多；学习方式更加多元化，除了听本校老师讲课，还能通过网络学习其他高校的课程。
+                    </p>
+                    </div>
+                    <img src="./z6.jpg" alt="">
+
+                    <div class="multicol">
+                        <h3>7.苏国辉（中国科学院院士、暨南大学粤港澳中枢神经再生研究院院长）</h3>
+                        <p>强调运动对大脑健康和心理健康非常重要。通过运动释放的“运动因子”可以改善脑内微环境、神经发生、突触可塑性等，从而增强情绪或认知功能。对于大学生等青少年群体，心理健康尤为重要，而运动是一种有效的调节方式。建议大学生养成运动习惯，这对于他们的学习和未来就业都具有积极意义。
+                    </p>
+                    </div>
+                    <img src="./z7.jpg" alt="">
+                    
+                    <div class="multicol">
+                        <h3>8.张东（济南市精神卫生中心名誉院长、学科带头人、教授）</h3>
+                        <p>指出大学生正处于人生发展的关键阶段，面临学业、就业、人际关系等多重压力，心理健康问题会对他们的学习和未来发展产生深远影响。“爱自己”就是要认识自己、了解自己，对自己做出恰如其分的判断；要善待自己的躯体，使之健康；尊重自己的社会价值，崇尚自己的人格与理想。大学生应学会接纳自己的不完美，培养积极的心态和情绪管理能力。
+                    </p>
+                    </div>
+                    <img src="./z8.jpg" alt="">
+                    
+                    <div class="multicol">
+                        <h3>9.刘向欣（广东省人民医院广东省精神卫生中心副主任医师）</h3>
+                        <p>将“心理健康的标准”引入讲座，分析疫情下心理压力的来源，并提出缓解心理压力的六个应对建议，还示范了渐进式肌肉放松法，帮助大学生缓解焦虑、纾解压力。他认为大学生应学习心理健康相关知识，掌握保持心理健康的方法，提高自身心理素质。
+                    </p>
+                    </div>
+                    <img src="./z9.jpg" alt="">
+                    
+                    <div class="multicol">
+                        <h3>10.王军（安徽工业大学教授、安徽省学生心理健康教育专家指导委员会副主任委员）</h3>
+                        <p>在孩子的生活习惯方面，对于家长和孩子在睡懒觉、吃早饭等问题上的冲突，他认为家长应站在孩子的角度看问题。如果孩子睡懒觉没有影响到上学，家长不必过于在意。要想让孩子养成良好的生活习惯，家长可以安排一些孩子喜欢的活动，和孩子一起建立有规则、有计划的生活方式。
+                    </p>
+                    </div>
+                    <img src="./z10.jpg" alt="">
+                    
+                    <div class="multicol">
+                        <h3>11.鞠强（管理心理学专家）</h3>
+                        <p>提出内务整洁与人生成功正相关。他通过多年的观察和研究发现，小时候内务相对好的人成功概率更高，因为良好的内务习惯可以训练思维的严密性，对个人的成长和发展具有积极影响。这一观点对于大学生培养良好的生活习惯和思维方式具有一定的启示作用。
+                    </p>
+                    </div>
+                    
+                </article>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const header = document.querySelector('header');
+        const img = document.querySelector('.img');
+        let scrollDistance = 0;
+        let requestId = null;
+        function updateHeaderClipPath() {
+            const clipPathValue = `polygon(0 0, 100% 0%, 100% ${(scrollDistance <= 600) ? 100 - ((scrollDistance / 600) * 60) : 75}%, 0 100%)`;
+            header.style.clipPath = clipPathValue;
+            const scaleValue = 1 + ((scrollDistance / 600) * 1);
+            img.style.transform = `scale(${scaleValue})`;
+            const opacityValue = (scrollDistance / 600);
+        }
+        function scrollHandler(event) {
+            if (event.deltaY < 0) {
+                scrollDistance = Math.max(0, scrollDistance + event.deltaY);
+            } else {
+                scrollDistance = Math.min(600, scrollDistance + event.deltaY);
+            }
+            if (!requestId) {
+                requestId = window.requestAnimationFrame(() => {
+                    updateHeaderClipPath();
+                    requestId = null;
+                });
+            }
+        }
+        window.addEventListener('wheel', scrollHandler);
+        const backButton = document.getElementById('backButton');
+   backButton.addEventListener('click', function() {
+       history.back();
+   });
+    </script>
+</body>
+
+</html> 

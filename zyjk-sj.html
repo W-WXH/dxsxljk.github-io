@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" sizes="32x32" href="./08.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>书籍推荐</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+      background-size: cover;
+    }
+
+    #main {
+      
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #click-section {
+      width: 35%;
+      height: 100%;
+      padding: 20px 0;
+      position: relative;
+    }
+
+    #drawerboxes {
+      margin-left: 10%;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    #drawerboxes::before {
+      content: "";
+      width: 8px;
+      height: 94%;
+      position: absolute;
+      left: -10px;
+      top: 3%;
+      z-index: 120;
+    }
+
+    .drawerbox {
+      height: calc(100% / 5.5);
+      width: 70%;
+      position: relative;
+      z-index: 100;
+      transform: translateX(-70%);
+      transition: transform .5s ease-in-out;
+    }
+
+    .drawerbox.active {
+      transform: translateX(0);
+    }
+
+    .drawer-btn {
+      width: 100%;
+      height: 100%;
+      font: 800 30px '';
+      background-color: rgb(175, 190, 255);
+      border: none;
+      transition: background-color .5s ease-in-out;
+      color: #ffffff00;
+    }
+
+    .drawer-btn.active {
+      background-image: url(./bg.jpg);
+      background-size: cover;
+      color: rgb(70, 100, 180);
+    }
+
+    .drawer-btn:hover {
+      cursor: pointer;
+    }
+
+    .drawer-head {
+      position: absolute;
+      color: rgb(255, 255, 255);
+      font-size: 200px;
+      font-weight: 700;
+      right: -38px;
+      top: calc(50% - 135px);
+      text-shadow: 2px -1px 8px rgba(250, 80, 193, 0.323);
+    }
+
+    #slide-section {
+      position: relative;
+      height: 100%;
+      width: 65%;
+      display: flex;
+      justify-content: center;
+      padding: 0 40px;
+      background: linear-gradient(to right bottom,
+          rgba(255, 255, 255, .6),
+          rgba(255, 255, 255, .3),
+          rgba(255, 255, 255, .2));
+      backdrop-filter: blur(11px);
+    }
+
+    #slide-bar {
+      position: absolute;
+      top: 10%;
+      left: 40px;
+      height: 80%;
+      width: 1px;
+      background-color: rgb(223, 223, 223);
+    }
+
+    #bar {
+      position: absolute;
+      height: calc(100% / 4);
+      width: 5px;
+      top: 0;
+      left: -1.2px;
+      background-color: rgb(175, 190, 255);
+      transition: transform .5s ease-in-out;
+    }
+
+    #card-section {
+      height: 100%;
+      width: 80%;
+      overflow: hidden;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      padding: 10% 0;
+      color: white;
+      font-size: 30px;
+      transition: transform .5s ease-in-out;
+    }
+
+    .card-small-title {
+        font-size: 20px; /* 减小字体大小 */
+        font-weight: 600;
+        padding-bottom: min(5%, 10px);
+        color: rgb(70, 100, 180);
+    }
+    
+    .card-title {
+        font-size: 50px; /* 减小字体大小 */
+        font-weight: 700;
+        padding-bottom: min(20%, 40px);
+        color: rgb(70, 100, 180);
+    }
+    
+    .card-content {
+        font-size: 20px; /* 减小字体大小 */
+        font-weight: 500;
+        color: rgb(94, 123, 255);
+        margin-bottom: 60px;
+    }
+
+    .card-img {
+      width: 100%;
+      height: 10000px;
+      overflow: hidden;
+    }
+
+    .card-img img {
+        display: block; /* 确保图片为块级元素 */
+        margin: 0 auto; /* 水平居中 */
+        height: 100%; /* 让图片高度占满容器 */
+        width: auto;
+    }
+
+    #myBackLinkId {
+      top: 10px;
+      left: 10px;
+      text-decoration: none;
+      color: rgb(70, 100, 180);
+      font-size: 20px;
+      position: fixed; /* 使用fixed定位，确保它相对于视口定位 */
+      z-index: 1000; /* 确保它在其他元素之上 */
+      
+}
+  </style>
+</head>
+
+<body>
+  <a href="javascript:history.back()" id="myBackLinkId">返回</a>
+  <div id="main">
+    <div id="click-section">
+      <div id="drawerboxes">
+        <div class="drawerbox active">
+          <button class="drawer-btn active" onclick="slideTo(1)">《普通心理学》<span
+              class="drawer-head">1</span></button>
+        </div>
+        <div class="drawerbox">
+          <button class="drawer-btn" onclick="slideTo(2)">《蛤蟆先生去看心理医生》<span
+              class="drawer-head">2</span></button>
+        </div>
+        <div class="drawerbox">
+          <button class="drawer-btn" onclick="slideTo(3)">《自卑与超越》<span class="drawer-head">3</span></button>
+        </div>
+        <div class="drawerbox">
+          <button class="drawer-btn" onclick="slideTo(4)">《你当像鸟飞往你的山》<span class="drawer-head">4</span></button>
+        </div>
+      </div>
+    </div>
+    <div id="slide-section">
+      <div id="slide-bar">
+        <div id="bar"></div>
+      </div>
+      <div id="card-section">
+        <div id="card1" class="card">
+          <div class="card-small-title">彭聃龄主编</div>
+          <div class="card-title">《普通心理学》</div>
+          <div class="card-content">简介：
+            这本书是心理学的基础教材，内容涵盖了心理学的各个主要领域。从心理的神经生理基础开始，逐步深入到感觉、知觉、意识和注意、记忆、思维、语言、动机、情绪和情感、能力和人格等方面。
+            对于每个主题，都进行了系统的阐述，包括基本概念的定义、相关的理论观点、研究方法和实验结果等。同时，书中还配有大量的图表和实例，以帮助读者更好地理解抽象的心理学概念。
+            
+            推荐原因：
+            对于大学生来说，这是一本了解心理学全貌的重要书籍。无论是对心理学专业的学生，还是对其他专业但对心理学感兴趣的学生，都能提供扎实的基础知识。它可以帮助大学生更好地理解自己和他人的行为和心理过程，提高自我认知和人际交往能力。</div>
+          <div class="card-img">
+            <img src="./sj1.jpg" alt="">
+          </div>
+        </div>
+        <div id="card2" class="card">
+          <div class="card-small-title">罗伯特·戴博德</div>
+          <div class="card-title">《蛤蟆先生去看心理医生》</div>
+          <div class="card-content">简介：
+            本书以童话故事的形式，讲述了蛤蟆先生在心理医生的引导下，勇敢地探索自己的内心世界，逐渐找回快乐和自信的过程。
+            通过蛤蟆先生与心理医生的十次面谈，读者可以了解到心理学中的一些重要概念和治疗方法，如儿童自我状态、父母自我状态、成人自我状态、人生坐标、心理游戏等。
+            
+            推荐原因：
+            故事生动有趣，易于理解，不会给读者带来沉重的学术压力。
+            可以帮助读者更好地了解自己的情绪和行为模式，认识到自己可能存在的心理问题，并学会寻求帮助和自我疗愈的方法。 </div>
+          <div class="card-img">
+            <img src="./sj2.jpg" alt="">
+          </div>
+        </div>
+        <div id="card3" class="card">
+          <div class="card-small-title">阿尔弗雷德·阿德勒</div>
+          <div class="card-title">《自卑与超越》</div>
+          <div class="card-content">简介：
+            作者阿尔弗雷德·阿德勒是个体心理学的创始人，他在书中提出了自卑与超越的理论。认为每个人都有不同程度的自卑感，而自卑感是人类进步的动力。
+            书中通过大量的实例，阐述了自卑感的来源、表现形式以及如何通过正确的方式超越自卑，实现个人的成长和发展。
+            
+            推荐原因：
+            帮助大学生正确认识自己的自卑感，将其转化为前进的动力。
+            提供了一种积极向上的人生态度和价值观，鼓励大学生勇敢地面对生活中的挑战，追求自己的梦想。 </div>
+          <div class="card-img">
+            <img src="./sj3.jpg" alt="">
+          </div>
+        </div>
+        <div id="card4" class="card">
+          <div class="card-small-title">塔拉·韦斯特弗</div>
+          <div class="card-title">《你当像鸟飞往你的山》</div>
+          <div class="card-content">简介：
+            这是一部自传体小说，讲述了作者塔拉·韦斯特弗在一个极端保守的摩门教家庭中成长的故事。在这个家庭中，孩子们没有接受过正规的教育，而是在父亲的废品回收站工作，并且遭受着家庭暴力和精神控制。
+            然而，塔拉凭借着自己的努力和勇气，通过自学考上了大学，并最终获得了剑桥大学的博士学位。在这个过程中，她不断地与自己的过去作斗争，努力摆脱家庭的束缚，寻找自己的人生方向。
+            
+            推荐原因：
+            激励大学生勇敢地突破自我，追求自己的梦想。
+            展示了教育的力量和价值，让大学生认识到知识可以改变命运。
+            提醒大学生关注心理健康问题，学会在困境中保持坚强和乐观。</div>
+          <div class="card-img">
+            <img src="./sj4.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // 定义变量 
+    let chosenSlideNumber = 1; // 当前选择的幻灯片编号 
+    let offset = 0; // 幻灯片偏移量 
+    let barOffset = 0; // 导航条偏移量 
+    let intervalID; // 定时器 ID 
+    // 启动幻灯片轮播 
+    startSlide();
+    // 获取所有抽屉按钮，并为每个按钮添加点击事件监听器 
+    const drawerBtns = Array.from(document.querySelectorAll(".drawer-btn"));
+    drawerBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        clearInterval(intervalID); // 清除定时器 
+        startSlide(); // 重新启动幻灯片轮播 
+      })
+    })
+    // 获取幻灯片区域 
+    const slideSection = document.querySelector("#slide-section");
+    // 鼠标移入幻灯片区域时清除定时器 
+    slideSection.addEventListener("mouseenter", () => {
+      clearInterval(intervalID);
+    })
+    // 鼠标移出幻灯片区域时重新启动幻灯片轮播 
+    slideSection.addEventListener("mouseleave", () => {
+      startSlide();
+    })
+    // 切换到指定编号的幻灯片 
+    function slideTo(slideNumber) {
+      drawerboxToggle(slideNumber); // 切换抽屉面板状态 
+      drawerbtnToggle(slideNumber); // 切换抽屉按钮状态 
+      // 更新偏移量 
+      let previousSlideNumber = chosenSlideNumber;
+      chosenSlideNumber = slideNumber;
+      offset += (chosenSlideNumber - previousSlideNumber) * (-100); // 计算幻灯片偏移量 
+      barOffset += (chosenSlideNumber - previousSlideNumber) * (100); // 计算导航条偏移量 
+      barSlide(barOffset); // 移动导航条 
+      // 获取所有幻灯片，为每个幻灯片设置偏移量 
+      const slides = document.querySelectorAll(".card");
+      Array.from(slides).forEach(slide => {
+        slide.style.transform = `translateY(${offset}%)`;
+      })
+    }
+    // 切换抽屉面板状态 
+    function drawerboxToggle(drawerboxNumber) {
+      let prevDrawerboxNumber = chosenSlideNumber;
+      const drawerboxes = document.querySelectorAll(".drawerbox");
+      drawerboxes[prevDrawerboxNumber - 1].classList.toggle("active"); // 切换前一个抽屉面板的状态 
+      drawerboxes[drawerboxNumber - 1].classList.toggle("active"); // 切换当前抽屉面板的状态 
+    }
+    // 切换抽屉按钮状态 
+    function drawerbtnToggle(drawerBtnNumber) {
+      let prevDrawerBtnNumber = chosenSlideNumber;
+      const drawerBtns = document.querySelectorAll(".drawer-btn");
+      drawerBtns[prevDrawerBtnNumber - 1].classList.toggle("active"); // 切换前一个抽屉按钮的状态 
+      drawerBtns[drawerBtnNumber - 1].classList.toggle("active"); // 切换当前抽屉按钮的状态 
+    }
+    // 移动导航条 
+    function barSlide(barOffset) {
+      const bar = document.querySelector("#bar");
+      bar.style.transform = `translateY(${barOffset}%)`;
+    }
+    // 启动幻灯片轮播 
+    function startSlide() {
+      intervalID = setInterval(() => {
+        slideTo(chosenSlideNumber % 4 + 1); // 每次切换到下一个幻灯片 
+      }, 3000); // 每隔 3 秒自动切换幻灯片 
+    }
+
+
+
+  </script>
+</body>
+
+</html>
